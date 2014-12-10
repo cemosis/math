@@ -1,0 +1,409 @@
+% -*- coding: utf-8
+% /solutions/conference-talks/conference-ornate-20min.fr.tex, 22/02/2006 De Sousa
+
+\documentclass[slideopt,A4]{beamer}
+
+\usetheme{default}
+
+\useoutertheme{infolines}
+
+\usepackage[]{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage[type1]{libertine}
+\renewcommand{\ttdefault}{cmtt}
+
+\usepackage{lastpage}
+\usepackage{mdframed}
+
+\usepackage{anyfontsize}
+\setmainfont{linuxbiolinumo}
+\setsansfont{linuxbiolinumo}
+
+\definecolor{fontmaincolor}{HTML}{}
+\definecolor{bgcolor}{HTML}{FFFFFF}
+\definecolor{bgshadecolor}{HTML}{DDDDDD}
+\graphicspath{%
+  {./Figures/}%
+}
+%\usepackage [T1] {inputenc}
+%\usepackage [utf8] {inputenc}
+
+\usepackage{eso-pic}
+\usepackage{monster2e}
+\usepackage{tikz}
+\usepackage{layout}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb,wasysym}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage[absolute,showboxes,overlay]{textpos}
+\TPshowboxesfalse
+\textblockorigin{0mm}{0mm}
+
+\definecolor{rouge1}{RGB}{226,0,38}  % red P
+\definecolor{orange1}{RGB}{243,154,38}  % orange P
+\definecolor{jaune}{RGB}{254,205,27}  % jaune P
+\definecolor{blanc}{RGB}{255,255,255} % blanc P
+
+\definecolor{rouge2}{RGB}{230,68,57}  % red S
+\definecolor{orange2}{RGB}{236,117,40}  % orange S
+\definecolor{taupe}{RGB}{134,113,127} % taupe S
+\definecolor{gris}{RGB}{91,94,111} % gris S
+\definecolor{bleu1}{RGB}{38,109,131} % bleu S
+\definecolor{bleu2}{RGB}{28,70,114} % bleu S
+\definecolor{vert1}{RGB}{133,146,66} % vert S
+\definecolor{vert2}{RGB}{157,193,7} % vert S
+
+\definecolor{rouge3}{RGB}{255,200,130}  
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block title}{fg=white, bg=rouge1}
+\setbeamercolor{block body}{fg=black, bg=rouge3}
+
+\renewcommand{\sfdefault}{lmss}
+\sffamily
+
+\setbeamersize{text margin left=1cm,text margin right=1cm}
+
+
+\AtBeginSection[] {
+  \begin{frame}<beamer>{Plan}
+   \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%    \tableofcontents[currentsection]
+  \end{frame}
+ }
+
+\AtBeginSubsection[] {
+  \begin{frame}<beamer>{Plan}
+   \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%    \tableofcontents[currentsection,currentssubection]
+  \end{frame}
+ }
+
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dg}{^\circ}
+\newcommand{\saut}{\vspace*{3mm}\\}
+\newcommand{\RR}{\hbox{\bf I\hspace*{-1mm}R}}
+
+\begin{document}
+
+
+\setbeamertemplate{background canvas}[vertical shading][top=white,middle=white,bottom=white]
+
+\setbeamertemplate{footline}{ \hspace{5em} \textcolor{white} {Les Mathématiques}\hspace{2em}\null \vspace*{3pt}}
+
+
+\begin{frame}
+
+\begin{textblock*}{15cm}(13mm,30mm)
+{\textcolor{red} {
+{\huge\bf Mathématiques appliquées: }\\[2mm]
+{\huge\bf  des maths en lien avec la société}\\[2mm]
+{\huge\bf   et son environnement}\\[8mm] }}
+%{\huge\bf  }\\[12mm]
+{\textcolor{black} {
+   	{\Large Philippe Helluy \& Christophe Prud'homme}\\[2mm]
+	{\Large Université de Strasbourg}\\[2mm]
+ 
+ \includegraphics[height=1.2cm]{LOGOS/logoCemosis}	\hspace*{40mm}	
+ \includegraphics[height=1.2cm]{LOGOS/logoUDS} 
+	\\
+	}
+	}
+	\end{textblock*}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{background canvas}[vertical shading][top=blanc, middle=blanc,bottom=blanc]
+
+\setbeamercolor{toto}{fg=white,bg=rouge1}
+
+\setbeamertemplate{footline}
+{
+\begin{beamercolorbox}[wd=1\paperwidth,ht=15.5pt]{toto}
+\hspace{-1.6mm}	
+  \raisebox{1.2ex}
+  {  \includegraphics[height=.6cm]{LOGOS/logoCemosis}}
+  \raisebox{2.5ex}
+ { P. Helluy \& C. Prud'homme (UNISTRA/CEMOSIS)  }
+\hspace{\fill}	
+ % \raisebox{1.2ex}
+%\hspace{\fill}	
+%  \raisebox{2.5ex}
+%  { \insertframenumber \hspace{1mm}  }
+  \raisebox{2.5ex}
+ { irma/moco }
+  \raisebox{1ex}
+{  \includegraphics[height=.6cm]{LOGOS/logoUDS}}
+\end{beamercolorbox} 
+}
+
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{{\Large Plan}}
+  \tableofcontents
+  % Vous pouvez, si vous le souhaiter ajouter l'option [pausesections]
+\end{frame}
+
+
+
+%\begin{frame}
+%Crypto: ajouter exemple de codage / décodage  eco spé maths TS\\[10mm]
+%
+%Simul: faire la discrétisation d'une équation de transport: 
+%- on prend 2 boites, on écrit les quantités qui passent de l'une à l'autre en un pas de temps delta t
+%- puis on en prend 3, etc...
+%
+%\end{frame}
+
+%%%%%%%%%%%
+
+\section{Mathématiques appliquées et métiers des maths}
+
+
+
+\begin{frame}
+\frametitle{Pour commencer...}
+
+%\textcolor{black} 
+%
+%
+%\begin{minipage}{70mm}
+\begin{itemize}
+\item {\large A quoi servent les mathématiques ?}
+\item  {\large Y a-t-il des métiers après des études en mathématiques ?}
+\end{itemize}
+%\end{minipage}
+%
+\begin{center}
+\includegraphics[width=0.20\linewidth]{maths2}$\quad$
+\includegraphics[width=0.27\linewidth]{maths1}$\quad$
+\includegraphics[width=0.24\linewidth]{einstein}
+\end{center}
+
+%
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{frame}
+\frametitle{Les mathématiques sont omniprésentes dans notre société}
+%
+%Les mathématiques sont omniprésentes dans notre société.
+\begin{center}
+\includegraphics[width=0.90\linewidth]{mix.png}
+\end{center}
+
+\end{frame}
+%
+%
+
+\begin{frame}
+\frametitle{Créer des images...}
+%
+\begin{center}
+\includegraphics[width=0.40\linewidth]{LaraCroft.png}$\,$
+\includegraphics[width=0.30\linewidth]{avatar}\\
+\includegraphics[width=0.50\linewidth]{tintin}
+\end{center}
+%
+\end{frame}
+%
+%
+\begin{frame}
+\frametitle{Créer des images...}
+%
+\begin{center}
+\includegraphics[width=0.40\linewidth]{tete.png}$\quad$
+\includegraphics[width=0.40\linewidth]{tete2.png}
+\end{center}
+%
+\end{frame}
+%
+
+
+%
+\begin{frame}
+\frametitle{Compresser les images et les sons: MP3, MP4, jpeg, mov...}
+%
+\begin{center}
+\begin{tabular}{cc}
+\textcolor{red}{Image originale} & \textcolor{red}{Image compressée} \\
+\includegraphics[width=0.40\linewidth]{lana-original.png} &
+\includegraphics[width=0.40\linewidth]{lana-compresse.png}
+\end{tabular}
+\end{center}
+%
+\pause
+%
+\begin{center}
+~\\[-10mm]
+\includegraphics[width=0.4\linewidth]{ipod.jpg}
+\end{center}
+%
+\end{frame}
+%
+
+%
+\begin{frame}
+\frametitle{Compresser les images et les sons: MP3, MP4, jpeg, mov...}
+%
+\includegraphics[width=0.3\linewidth]{fourier} $\qquad$
+\includegraphics[width=0.5\linewidth, angle=-1.5]{fourier4} \\[5mm]
+\centerline{\includegraphics[width=0.6\linewidth]{fourier2}}
+%
+\end{frame}
+%
+
+%
+\begin{frame}
+\frametitle{Imagerie médicale...}
+\small
+%
+%
+\begin{block}{Principe}
+On soumet le corps à un signal (magnétique, électrique, acoustique, ...), et en fonction de la réponse obtenue, on reconstruit  une image de la zone observée (problème inverse).
+\end{block}
+%
+\centerline{\includegraphics[width=0.7\linewidth]{imagerie-medicale.png}}
+%
+\end{frame}
+%
+
+
+%
+\begin{frame}
+\frametitle{Statistiques...}
+%
+%
+\includegraphics[width=0.3\linewidth]{medicaments.jpg}$\;$
+\includegraphics[width=0.3\linewidth]{banque}$\;$
+\includegraphics[width=0.3\linewidth]{assurance}
+%
+\end{frame}
+%
+
+
+%
+\begin{frame}
+\frametitle{Crypter...}
+%
+% 
+\begin{minipage}{5cm}
+~\\[-50mm]
+\includegraphics[width=0.75\linewidth]{carte-bleue.jpg}\\
+\includegraphics[width=0.95\linewidth]{paypal.jpg}
+\end{minipage}
+\includegraphics[width=0.5\linewidth]{reseau}
+%
+\end{frame}
+%
+
+
+
+%
+\begin{frame}
+\frametitle{Modéliser...}
+%
+%
+\begin{minipage}{35mm}
+\includegraphics[width=0.99\linewidth]{edf.png}
+\end{minipage}$\;$
+\begin{minipage}{70mm}
+\includegraphics[width=0.99\linewidth]{edf2.png}\\[10mm]
+\centerline{\alert{EDF}}
+\end{minipage}
+%
+\end{frame}
+%
+
+%
+\begin{frame}
+\frametitle{Modéliser...}
+%
+Stockage de déchets radioactifs $\rightarrow$ Modélisation des écoulements en milieux poreux autour du site\\
+\centerline{\includegraphics[width=0.8\linewidth]{stockage.png}}
+%
+\end{frame}
+%
+
+%
+\begin{frame}
+\frametitle{Modéliser...}
+%
+Contrôle non destructif
+%
+\centerline{\includegraphics[width=0.75\linewidth]{controle-nondestructif.png}}
+%
+\end{frame}
+%
+
+
+%
+\begin{frame}
+\frametitle{Modéliser...}
+%
+Fusion nucléaire contrôlée : plasma confiné dans la chambre magnétique (ITER)
+%
+\centerline{\includegraphics[width=0.8\linewidth]{iter.png}}
+%
+\end{frame}
+%
+
+
+
+
+%
+\begin{frame}
+\frametitle{Modéliser...}
+%
+% 
+
+\includegraphics[width=0.4\linewidth]{voiture.png}$\qquad$
+\includegraphics[width=0.5\linewidth]{pneu.png}\\[3mm]
+\centerline{\includegraphics[width=0.5\linewidth]{avion}}
+%
+\end{frame}
+%
+
+%
+\begin{frame}
+\frametitle{Modéliser...}
+%
+% 
+\centerline{
+\includegraphics[width=0.2\linewidth]{chaise.png}$\qquad$
+\includegraphics[width=0.2\linewidth]{coca}$\qquad$
+\includegraphics[width=0.2\linewidth]{lessive} }
+%
+\end{frame}
+%
+
+
+%
+\begin{frame}
+\frametitle{Il y a des dizaines de "métiers des maths" {\small (pas seulement prof !) }}
+%
+\begin{center}
+\includegraphics[width=0.4\linewidth]{onisep.pdf}
+\end{center}
+%
+\centerline{\htmladdnormallink{Quels Métiers pour les matheux? (ONISEP!)}{http://www.onisep.fr/Toute-l-actualite-nationale/Decouvrir-les-metiers/Decembre-2014/Quels-metiers-pour-les-matheux}}
+%
+\end{frame}
+
+
+\end{document}
+
