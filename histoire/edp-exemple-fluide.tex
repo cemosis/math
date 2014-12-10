@@ -1,0 +1,37 @@
+\begin{frame} \frametitle{Mécanique des Fluides}
+  \only<1>{
+  \'Equations de {\bf Navier-Stokes} (Claude Navier, fran\c cais et George Stokes, irlandais,
+  deux math\'ematiciens du 19\`eme si\`ecle) :
+  \begin{center}
+    \includegraphics[height=4.5cm]{Figures/jpegs/szopos/navier-stokes-portraits.jpg}
+  \end{center}
+
+  Équations de Navier-Stokes incompressibles
+  $$
+  \begin{aligned}
+    \frac{\partial u}{\partial t} + u\cdot\nabla u -\nu \Delta u + \nabla p = f & \mbox{ dans } \Omega\\
+    \nabla \cdot u = 0 & \mbox{ dans } \Omega\\
+    \mbox{+ C.L}
+  \end{aligned}
+  $$
+}
+\only<2>{
+    \begin{columns}
+    \begin{column}{.5\linewidth}
+      \begin{figure}[H]
+        \centering
+        \centerline{\includegraphics[width=\figwidth\textwidth]{figures/jpegs/prudhomme/path_f1}}
+        \caption{Lignes de courant autour d'une voiture de Formule 1.}
+        \label{fig:3}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{itemize}
+      \item Géométrie complexe
+      \item Simulation complexe
+      \item Nécessite des ressources de calcul importantes
+      \end{itemize}
+    \end{column}
+  \end{columns}
+}
+\end{frame}

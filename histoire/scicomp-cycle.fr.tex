@@ -1,0 +1,91 @@
+\begin{frame}
+  \frametitle{Cycle de la simulation numérique}
+
+  \tikzstyle{root concept}+=[concept color=white!80]
+  \tikzstyle{level 1 concept}+=[concept color=red!80, sibling angle=72]
+  \tikzstyle{every annotation}=[fill=black!50,opacity=0.5,text=white,scale=.7]
+  \begin{tikzpicture}[->]
+     \path[mindmap,concept color=black!60,text=white]
+     node[concept,scale=.7] {Numerical Simulation Cycle}
+     %node[concept,scale=.7] {Scientific Computing}
+     [clockwise from=0]
+     %child[concept,scale=.6] { node[concept,scale=.7] (phys) {Physics Mechanics Biology Processing} }
+     child[concept,scale=.6] { node[concept,scale=.7] (phys) {Modélisation} }
+     child[concept,scale=.6] { node[concept,scale=.7] (am) {Math. Appli} }
+     child[concept,scale=.6] { node[concept,scale=.7] (nm) {Math. Num} }
+     child[concept,scale=.6] { node[concept,scale=.7] (cs) {Informatique} }
+     child[concept,scale=.6] { node[concept,scale=.7] (va) {Validation} }
+     ;
+     \node [annotation,below] at (phys.south east)
+     {
+       \begin{itemize}
+       \item Santé
+       \item Geophysique
+       \item Astrophysique
+       \item Prévision du temps
+       \item Climat
+       \item Physique des Plasma
+       \item Aerodynamique
+       \item Hydrodynamique
+       \item MHD
+       \item Rheologie
+       \item Traitement des matériaux
+       \item Fusion des métaux
+       \item Finance
+       \end{itemize}
+     };
+     \node [annotation,below] at (am.mid)
+     {
+       \begin{itemize}
+       \item Statistiques
+       \item Analyse fonctionnelle
+       \item Equations aux dérivées partielles,
+       \item Equations Stochastiques, etc.
+       \end{itemize}
+     };
+     \node [annotation,below] at (nm.west)
+    {
+      \begin{itemize}
+      \item Analyse numérique:
+        Convergence, Erreurs
+      \item Methods d'approximation:
+        Discretization espace/time
+        DF, EF, VF,  methodes
+        spectrales, simulation de particules
+      \item Algorithmes: complexité, précision
+      \item Generation de Maillage , CAO
+      \item Résolution de systemes (non)linéaires
+      \end{itemize}
+    };
+    \node [annotation,above] at (cs.north)
+    {
+    \begin{itemize}
+    \item Architecture: vectorielle, parallele,  scalaire, cluster.
+    \item Systemes, Compilateurs. Librairies
+      \item Data management, Visualisation
+      \item Parallelisation: MPI, OpenMP
+      \item Optimisation, Parameterisation
+      \end{itemize}
+    };
+    \node [annotation,above] at (va.north)
+    {
+      \begin{itemize}
+      \item Interpretation des résulats numériques
+      \item Comparaison avec l'experience
+
+      \item \alert{Correction des modèles}
+      \end{itemize}
+    }
+    ;
+
+    \begin{pgfonlayer}{background}
+      \draw [concept connection]
+      (phys) edge node[above,sloped]{Analyser} (am)
+      (am) edge node[above,sloped]{Analyser} (nm)
+      (nm) edge node[above,sloped]{Implementer} (cs)
+      (cs) edge node[above,sloped]{Executer} (va)
+      (va) edge node[above,sloped]{Corriger} (phys);
+     \end{pgfonlayer}
+
+\end{tikzpicture}
+\end{frame}

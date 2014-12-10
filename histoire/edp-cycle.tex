@@ -1,0 +1,62 @@
+\begin{frame}
+  \frametitle{Cycle: Expérimentations, Modélisation, Simulation}
+
+  \note[item]{On explique ici : \alert{aller-retours entre
+      expérimentation, modélisation et simulation}}
+
+  \tikzstyle{root concept}+=[concept color=white!80]
+  \tikzstyle{level 1 concept}+=[concept color=red!80, sibling angle=120]
+  \tikzstyle{every annotation}=[fill=black!50,opacity=0.5,text=white,scale=.7]
+  \begin{tikzpicture}[->]
+    \path[mindmap,concept color=black!60,text=white]
+    node[concept,scale=.7] {Cycle}
+    %node[concept,scale=.7] {Scientific Computing}
+    [clockwise from=0]
+    % child[concept,scale=.6] { node[concept,scale=.7] (phys) {Physics Mechanics Biology Processing} }
+    child[concept,scale=.6] { node[concept,scale=.7] (exp) {Exp\'erimentation} }
+    child[concept,scale=.6] { node[concept,scale=.7] (mod) {Mod\'elisation} }
+    child[concept,scale=.6] { node[concept,scale=.7] (sim) {Simulation} };
+
+    \node [annotation,left] at (mod.west)
+    {
+      \begin{itemize}
+      \item Geophysics
+      \item Astrophysics
+      \item Weather forecast
+      \item Global Change
+      \item Plasma physics
+      \item Aerodynamics
+      \item Hydrodynamics
+      \item MHD
+      \item Rheology
+      \item Materials processing
+      \item Molten metals
+      \item Finance
+      \end{itemize}
+    };
+    \node [annotation,left] at (sim.south west)
+    {
+      \begin{itemize}
+      \item Applied Mathematics
+      \item Numerical Analysis
+      \item Computer Science
+      \end{itemize}
+    };
+    \node [annotation,right] at (exp.south)
+    {
+      \begin{itemize}
+      \item Construction d'expériences (laboratoire + numerique)
+      \item Comparaison entre expériences en laboratoire et numériques
+      \item Création et correction de modèles
+      \end{itemize}
+    };
+
+    \begin{pgfonlayer}{background}
+      \draw [concept connection]
+      (exp) edge node[below,sloped,scale=.7]{Analyser,Modéliser} (mod)
+      (mod) edge node[above,sloped,scale=.7]{Analyser,Discrétiser,Simuler} (sim)
+      (sim) edge node[above,sloped,scale=.7]{Valider} (exp);
+    \end{pgfonlayer}
+
+  \end{tikzpicture}
+\end{frame}
