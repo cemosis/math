@@ -1,0 +1,20 @@
+\begin{frame}
+  \frametitle{Les ingrédients d'une EDP}
+  \begin{block}{Forme Abstraite d'une EDP}
+    trouver $u = u(x,y,z,t)$ telle que
+    \begin{equation}
+      \label{eq:1}
+      \frac{\partial u }{\partial t} = F( x, y, z, u, \ddx{u}, \ddy{u}, \ddz{u}, \dddxdx{u}, ... )
+    \end{equation}
+    \begin{itemize}
+    \item $u$ Champs scalaire ou vectoriel (e.g. température, vitesse, pression,...)
+    \item \ddx{u}, \dddxdx{u} dérivées partielles, mais aussi $\nabla u, \nabla \cdot u, \nabla \times u$
+    \item $F$ est donnée par la physique ou la mécanique et fait l'objet
+      d'\alert{aller-retours entre expérimentation, modélisation et
+        simulation}
+    \item $=$ Calcul
+    \end{itemize}
+
+
+  \end{block}
+\end{frame}
