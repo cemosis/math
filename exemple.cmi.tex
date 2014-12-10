@@ -1,15 +1,90 @@
-ma\subsection{Champs Magnétiques Intenses}
+\subsection{Champs Magnétiques Intenses}
+\begin{frame}{Laboratoire National des Champs Magn\'etiques Intenses}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \begin{alertblock}{ \begin{small} Grand équipement francais (CNRS) \end{small}}
+        \begin{small}
+          \begin{itemize}
+          \item Champs magnétiques intenses : à partir de 24 T.
+          \end{itemize}
+        \end{small}
+      \end{alertblock}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{alertblock}{}
+        \begin{small}
+          \begin{itemize}
+          \item À Grenoble, champ continu max : 36 T
+            (objectif 40-45T).
+          \end{itemize}
+        \end{small}
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+
+  \vspace*{-0.4cm}
+  \begin{tikzpicture}[scale=0.42][%
+    >=latex,%
+    font=\fontfamily{phv}\fontsize{7}{8}\selectfont,
+    legend/.style={%
+      draw,
+      rounded corners=2pt,
+      shade}]
+
+    % frise 
+    \draw[rounded corners,shade,left color=fColor!40,right color=fColor!5] (-14,0) -- ++ (26,0) -- ++ (1,1.5) -- ++(-1,1.5) -- ++ (-26,0) -- cycle;
+    % axe bas
+    \path (-10,0) -- (10,0) coordinate (xL axis);
+    % axe haut
+    \path[yshift=+3cm]         (-10,0) -- (10,0) coordinate (xH axis);
+    % rupture
+    \path[] (+0.5,-0.25) rectangle ++(8mm,3.5) node [midway,rotate=90,minimum width=3.5cm,shade,sharp corners,inner sep=1pt] (r1) {36 tesla};
+    \draw[densely dotted] (r1.south east) -- (r1.south west) (r1.north east) -- (r1.north west);
+    \draw[thick] (1.5,0) -- (1.5,-30mm) \bottomGraphics{width=3cm}{Figures/cmi/polyhelix.jpg};
+    \draw[] (0,0) coordinate (an0) -- (an0 |- xH axis) -- ++ (0,2.5mm) node [above] {$10^0$};
+
+
+    % scope 1
+    \begin{scope}[xshift=3cm,xscale={14cm/400cm}]
+      % graduation
+      \draw[] (0,0)   coordinate (an0) -- (an0 |- xH axis) -- ++ (0,2.5mm) node [above] {$10^{+2}$};
+      \draw[] (100,0) coordinate (an100) -- (an100 |- xH axis) -- ++ (0,2.5mm) node [above] {$10^{+3}$};
+      \draw[] (200,0) coordinate (an200) -- (an200 |- xH axis) -- ++ (0,2.5mm) node [above] {$10^{+9}$};
+
+      % evennement
+      \topEvent{0,0}{an1617}{0,28mm} \topLegend{text width=4.5cm,name=r}{100 t :\\Pulsed magnetic field (ND) (USA)};
+      \bottomEvent{127,0}{an1727}{0,-10mm} \bottomLegend{text width=4.5cm}{2800 t :\\Pulsed magnetic field (D) (Russia)};
+      \topEvent{200,0}{an1617}{0,12mm} \topLegend{text width=2cm}{100 Mt to 100 Gt :\\Magnetar};
+    \end{scope}
+
+    % scope 2
+    \begin{scope}[xshift=0cm,xscale={0.7cm/30cm}]
+      % graduation
+      \draw[] (-100,0) coordinate (anM1000) -- (anM1000 |- xH axis) -- ++ (0,2.5mm) node [above,fill=white] {$10^{-1}$};
+      \draw[] (-200,0) coordinate (anM2000) -- (anM2000 |- xH axis) -- ++ (0,2.5mm) node [above,fill=white] {$10^{-2}$};
+      \draw[] (-300,0) coordinate (anM3000) -- (anM3000 |- xH axis) -- ++ (0,2.5mm) node [above,fill=white] {$10^{-5}$};
+      \draw[] (-500,0) coordinate (anM4000) -- (anM4000 |- xH axis) -- ++ (0,2.5mm) node [above,fill=white] {$10^{-12}$};
+      % evennement
+
+      \bottomEvent{6,0}{anM30}{0,-30mm} \bottomLegend{text width=2.5cm}{$1.5$ to 3 t : \\medical MRI systems};
+
+      \topEvent{-173,0}{anM1730}{0,12mm} \topLegend{text width=2.5cm}{0.5 mt :\\limit for pacemakers};
+      \bottomEvent{-300,0}{anM1730}{0,-10mm} \bottomLegend{text width=3cm}{31 to 100 $\mu$t :\\Earth's magnetic field};
+      \topEvent{-500,0}{anM3730}{0,12mm} \topLegend{text width=2cm}{$10^{-12}$ t :\\Human brain};
+    \end{scope}
+  \end{tikzpicture}
+\end{frame}
 
 \begin{frame}{Laboratoire National des Champs Magn\'etiques Intenses}
 
-   installation champs pulsé à  TOULOUSE : 14 MJ, 24 kV, 1 GW,  80 Tesla
+   Installation champs pulsés à TOULOUSE : 14 MJ, 24 kV, 1 GW, 80 Tesla
    \vskip-0.3cm
    \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{Figures/cmi/powersupply_pulsed.png}
    \end{figure}
 
-   Installation champs continus  GRENOBLE: 24 MW,  35  Tesla
+   Installation champs continus à GRENOBLE: 24 MW,  36 Tesla
    \vskip-0.3cm
 
  \begin{columns}[c]
@@ -27,76 +102,45 @@ ma\subsection{Champs Magnétiques Intenses}
    \end{figure}
   \end{column}
  \end{columns}
-
 \end{frame}
 
-\begin{frame}{Champs Magn\'etiques Intenses}
-%dire que c'est comme NHFML in Florida
-\begin{columns}[c]
- \begin{column}{5.9cm}
-  \begin{alertblock}{ \begin{small} Grand équipement francais \end{small}}
-    \begin{small}
-   \begin{itemize}
-    \item Champs magnétiques intenses : à partir de 24 T .
-    \item À Grenoble le champs magnétiques d'intensité maximum : 35 T
-      (objectif 40-45T).
-   \end{itemize}
-    \end{small}
-  \end{alertblock}
- \end{column}
- \begin{column}{5.9cm}
-  \begin{block}{ \begin{small} Domaine d'application \end{small}}
-   \begin{small}
-   \begin{itemize}
-    \item Science du magnétisme ;
-    \item Physique du solide  (Résonance Magnétique Nucléaire) ;
-    \item Supraconductivité appliquée.
-   \end{itemize}
-    \end{small}
-  \end{block}
- \end{column}
-\end{columns}
+\begin{frame}{Champs magnétiques intenses : domaines d'application}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{small}
+        \begin{itemize}
+        \item Supraconductivité appliquée ;
+        \item Science du magnétisme ;
+        \item (Bio-)Chimie ;
+        \end{itemize}
+      \end{small}
 
-\begin{columns}[c]
- \begin{column}{2.5cm}
+    \end{column}
+
+    \begin{column}{0.55\textwidth}
+      \begin{small}
+        \begin{itemize}
+        \item Physique du solide (Résonance Magnétique Nucléaire) ;
+        \item Lévitation magnétique ;
+        \item ...
+        \end{itemize}
+      \end{small}
+
+    \end{column}
+  \end{columns}
+
   \begin{figure}[H]
-   \centering
-   \includegraphics[scale=0.2]{Figures/cmi/Helices.png}
-    \caption{Helix}
+    \includegraphics[scale=0.5]{Figures/cmi/research.png}
   \end{figure}
- \end{column}
- \begin{column}{3.4cm}
-   \begin{figure}[H]
-   \centering
-   \includegraphics[scale=0.2]{Figures/cmi/Bitter.png}
-    \caption{Bitter}
-  \end{figure}
- \end{column}
- \begin{column}{4.6cm}
-  \begin{block}{\begin{small} Champs magnétique \end{small}}
-   \begin{small}
-   \begin{itemize}
-    \item Champs terrestre : $5.8 \cdot 10^{-4} T$ .
-    \item Supraconducteurs : $24 T$ .
-    \item \textcolor{red!80}{Champs continus : $35 T$  .}
-    \item Champs pulsés : $90 T$ .
-   \end{itemize}
-  \end{small}
-  \end{block}
-
- \end{column}
-\end{columns}
-
 \end{frame}
 
 %\subsection{Magnet study requires multi-physics modeling}
 \begin{frame}{Champs Magnétiques Intenses}
   \vspace*{-0.5cm}
   \begin{columns}[c]
-    \begin{column}{.5\linewidth}
+    \begin{column}{.7\linewidth}
 
       \begin{block}{Simulation des électro-aimants}
-        % dire a la fin avant la limitation des modeles qu'on va s'interesser a electro-heat
         \begin{itemize}
         \item Champs magnétique intense
           \begin{itemize}
@@ -113,7 +157,7 @@ ma\subsection{Champs Magnétiques Intenses}
         \item Refroidissement des électro-aimants
           \begin{itemize}
           \item Échanges thermiques entre le conducteur et l'eau
-          \item $\rightarrow$ \textcolor{red}{thermo-hydraulique } \\
+          \item $\rightarrow$ \textcolor{red}{Thermo-hydraulique } \\
           \end{itemize}
 
         \item Stress mécanique
@@ -126,15 +170,12 @@ ma\subsection{Champs Magnétiques Intenses}
       \end{block}
 
     \end{column}
-    \begin{column}{5cm}
-      \vspace*{-0.3cm}
+    \begin{column}{.42\linewidth}
+      \vspace*{-0.5cm}
       \begin{figure}[H]
         \centering
-        \includegraphics[scale=0.28]{Figures/cmi/Schema_Forces.pdf}
+        \includegraphics[scale=0.26]{Figures/cmi/Schema_Forces.pdf}
       \end{figure}
-      % \begin{alertblock}{Need numerical simulation}
-      % \item design models achieved their limits
-      % \end{alertblock}
     \end{column}
   \end{columns}
 \end{frame}
@@ -142,35 +183,39 @@ ma\subsection{Champs Magnétiques Intenses}
 \begin{frame}{Champs Magnétiques Intenses}
   \begin{block}{Objectifs}
     \begin{columns}[c]
-      \column{.5\linewidth}
-
-      \begin{itemize}
-      \item Hiérarchie de modèles
-      \item Réduction de modèles (simulation temps réel fiable)
-      \item Optimisation du design des électro-aimants
-      \end{itemize}
-
-
-      \column{.5\linewidth}
-      \begin{itemize}
-      \item Contrôle  des électro-aimants
-      \item Quantification d'incertitudes :
+      \column{.47\linewidth}
+      \begin{small}
         \begin{itemize}
-        \item Analyse de sensibilité
-        \item Estimation de quantile
+        \item Hiérarchie de modèles
+        \item Réduction de modèles (simulation temps réel fiable)
+        \item Optimisation du design des électro-aimants
         \end{itemize}
-      \item Optimisation sous incertitudes
-      \end{itemize}
-  \end{columns}
-    \end{block}
-    \begin{columns}[c]
-      \column{.3\linewidth}
-      \includegraphics[height=.5\textheight]{Figures/cmi/temperature_HR_Bosse_1.png}
-      \column{.3\linewidth}
-      \includegraphics[height=.5\textheight]{Figures/cmi/temperature_HR_Bosse_cut1.png}
-      \column{.3\linewidth}
-      \includegraphics[height=.5\textheight]{Figures/cmi/potentiel_HR_Bosse_mesh1.png}
+      \end{small}
+      \column{.49\linewidth}
+      \begin{small}
+        \begin{itemize}
+        \item Contrôle  des électro-aimants
+        \item Quantification d'incertitudes :
+          \begin{itemize}
+          \item Analyse de sensibilité
+          \item Estimation de quantile
+          \end{itemize}
+        \item Optimisation sous incertitudes
+        \end{itemize}
+      \end{small}
     \end{columns}
+  \end{block}
+  
+  \begin{columns}[c]
+    \column{.1\linewidth}
+    \includegraphics[height=.4\textheight]{Figures/cmi/temperature_newton_HL31_bmap+dilat_ws2.png}
+    \column{.3\linewidth}
+    \includegraphics[height=.4\textheight]{Figures/cmi/temp_picard_np1024_OT200l170_comp.png}
+    \column{.3\linewidth}
+    \includegraphics[height=.4\textheight]{Figures/cmi/Magnetmodels_bmap+dilat_HL31.png}
+    \column{.19\linewidth}
+    \includegraphics[height=.4\textheight]{Figures/cmi/HR-21-sector_magnetic_field_02.png}
+  \end{columns}
 
 \end{frame}
 

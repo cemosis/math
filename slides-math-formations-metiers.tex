@@ -41,6 +41,10 @@
 \TPshowboxesfalse
 \textblockorigin{0mm}{0mm}
 
+\usepackage{media9}
+%\usepackage{movie15_dvipdfmx}
+%\usepackage[dvipdfmx]{movie15_dvipdfmx}
+
 \definecolor{rouge1}{RGB}{226,0,38}  % red P
 \definecolor{orange1}{RGB}{243,154,38}  % orange P
 \definecolor{jaune}{RGB}{254,205,27}  % jaune P
@@ -61,6 +65,43 @@
 \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamercolor{block title}{fg=white, bg=rouge1}
 \setbeamercolor{block body}{fg=black, bg=rouge3}
+
+\usepackage{tikz}
+% tikz library (frise lncmi exemple)
+\usetikzlibrary{calc,fit,shadows,arrows,positioning}
+\usepackage{xcolor}
+\xdefinecolor{fColor}{RGB}{0 81 145} % Light blue
+\newcommand{\fColor}{fColor}
+
+\newcommand{\topLegend}[2]{
+  node [text centered,%
+  shade,%
+  top color=\fColor,%
+  text justified,
+  draw,%
+  semithick,
+  rounded corners=2pt,
+  above,
+  #1] {#2}}
+
+\newcommand{\bottomLegend}[2]{
+  node [text centered,%
+  shade,%
+  top color=\fColor,%
+  text justified,
+  draw,%
+  semithick,
+  rounded corners=2pt,
+  below,
+  #1] {#2}}
+
+\newcommand{\topEvent}[3]{\draw[<-,very thick] (#1) coordinate (#2) (#2 |- xH axis) -- ++ (#3)}
+\newcommand{\bottomEvent}[3]{\draw[<-,very thick] (#1) coordinate (#2) -- ++ (#3)}
+\newcommand{\bottomGraphics}[2]{node[below,draw,inner sep=1pt,thin,rounded corners=1pt] {\includegraphics[#1]{#2}}}
+\newcommand{\topGraphics}[2]{node[above,draw,inner sep=1pt,thin,rounded corners=1pt] {\includegraphics[#1]{#2}}}
+
+% define trademark symbol
+\def\registered{{\ooalign{\hfil\raise .00ex\hbox{\scriptsize R}\hfil\crcr\mathhexbox20D}}}
 
 \renewcommand{\sfdefault}{lmss}
 \sffamily
