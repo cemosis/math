@@ -104,38 +104,159 @@
  \end{columns}
 \end{frame}
 
-\begin{frame}{Champs magnétiques intenses : domaines d'application}
-  \begin{columns}
-    \begin{column}{0.55\textwidth}
-      \begin{small}
+% \begin{frame}{Champs magnétiques intenses : domaines d'application}
+%   \begin{columns}
+%     \begin{column}{0.55\textwidth}
+%       \begin{small}
+%         \begin{itemize}
+%         \item Supraconductivité appliquée ;
+%         \item Science du magnétisme ;
+%         \item (Bio-)Chimie ;
+%         \end{itemize}
+%       \end{small}
+
+%     \end{column}
+
+%     \begin{column}{0.55\textwidth}
+%       \begin{small}
+%         \begin{itemize}
+%         \item Physique du solide (Résonance Magnétique Nucléaire) ;
+%         \item Lévitation magnétique ;
+%         \item ...
+%         \end{itemize}
+%       \end{small}
+
+%     \end{column}
+%   \end{columns}
+
+%   \begin{figure}[H]
+%     \includegraphics[scale=0.5]{Figures/cmi/research.png}
+%   \end{figure}
+% \end{frame}
+
+\begin{frame}{Champs Magnétiques Intenses : à quoi ça sert ?}
+    \begin{columns}[c]
+      \begin{column}{0.78\textwidth}
+        \begin{block}{Reproduire les conditions de zero-gravité}
+          Moteur d'ariane 6 (SNECMA) : 
+          \begin{itemize}
+          \item Comment se comporte l'hydrogène liquide (carburant) en apesanteur ?
+            \begin{itemize}
+            \item Données d'entrée pour le design du moteur
+            \item Moins coûteux qu'une expérience en conditions "réelles"
+              \begin{itemize}
+              \item heure de champ intense ($\approx$ 1000 \euro)
+              \item vol parabolique ($\approx$ 100.000 \euro)
+              \item vol dans l'espace ($\approx$ 10.000.000 \euro)
+              \end{itemize}
+            \end{itemize}
+          \end{itemize}
+          \vspace*{-0.4cm}
+          \begin{columns}[c]
+            \begin{column}{0.5\textwidth}
+              \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.1]{Figures/cmi/levitation_1.png}
+              \end{figure}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+              \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.12]{Figures/cmi/levitation_2.png}
+              \end{figure}
+            \end{column}
+          \end{columns}
+        \end{block}
+      \end{column}
+      \begin{column}{0.25\textwidth}
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.12]{Figures/cmi/ariane6_2.jpg}
+        \end{figure}
+      \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Champs Magnétiques Intenses : à quoi ça sert ?}
+
+  \begin{block}{Etudier les propriétés magnétiques}
+    Optimisation de la capacité des disques durs
+    \begin{itemize}
+    \item Capacité dépend des propriétés magnétiques
+      \begin{itemize}
+      \item Revetement des disques : oxyde de fer (magnétique)
+      \item Ecriture d'un bit : envoi d'une charge magnétique
+      \item Lecture d'un bit : mesure de son champ magnétique
+      \end{itemize}
+    \end{itemize}
+    \vspace*{-0.3cm}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{Figures/cmi/disk.png}
+    \end{figure}
+
+    Compréhension/Optimisation des propriétés magnétiques :
+    \vspace*{-0.2cm}
+    \begin{center}
+      Mega-octets (Mo) $~\longrightarrow~$ Giga-octets (Go) $~\longrightarrow~$ Tera-octets (To)
+    \end{center}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Electro-Aimants : à quoi servent les modèles ?}
+  \begin{block}{Avant la mise en service : Développement des aimants}
+    \begin{small}
+      \begin{itemize}
+      \item Augmenter l'intensité du champ magnétique
+      \item Améliorer sa qualité (homogénéité)
+      \end{itemize}
+    \end{small}
+    \vspace*{-0.5cm}
+    \begin{center} \textbf{Optimisation $\Rightarrow$ Modélisation (fine) des electro-aimants} \end{center}
+    \vspace*{-0.3cm}
+    \begin{small}
+      \begin{itemize}
+      \item Permet de couvrir une large gamme de paramètres
         \begin{itemize}
-        \item Supraconductivité appliquée ;
-        \item Science du magnétisme ;
-        \item (Bio-)Chimie ;
+        \item Envisager autant de cas que l'on veut pour trouver le design "optimal"
         \end{itemize}
-      \end{small}
-
-    \end{column}
-
-    \begin{column}{0.55\textwidth}
-      \begin{small}
+      \item Possibilité de prévoir/anticiper les scénarios "catastrophes"
         \begin{itemize}
-        \item Physique du solide (Résonance Magnétique Nucléaire) ;
-        \item Lévitation magnétique ;
-        \item ...
+        \item Et éviter la casse (très couteuse!)
         \end{itemize}
-      \end{small}
+      \end{itemize}
+    \end{small}
+  \end{block}
+\end{frame}
 
-    \end{column}
-  \end{columns}
-
-  \begin{figure}[H]
-    \includegraphics[scale=0.5]{Figures/cmi/research.png}
-  \end{figure}
+\begin{frame}{Electro-Aimants : à quoi servent les modèles ?}
+  \begin{block}{Après la mise en service : Lors d'un incident}
+    \begin{small}
+      \begin{itemize}
+      \item Identifier/Comprendre la cause de l'incident
+        \begin{itemize}
+        \item Temperature trop elevée ? Problème mécanique ?
+        \end{itemize}
+      \end{itemize}
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.15]{Figures/cmi/loupe.jpg}
+      \end{figure}
+    \end{small}
+    \vspace*{-0.4cm}
+    \begin{center} \textbf{Analyse $\Rightarrow$ Reproduire l'incident par la simulation} \end{center}
+    \vspace*{-0.4cm}
+    \begin{small}
+      \begin{itemize}
+      \item Trouver une solution pour éviter que l'incident se reproduise : optimisation avant (re-) mise en service
+      \end{itemize}
+    \end{small}
+  \end{block}
 \end{frame}
 
 %\subsection{Magnet study requires multi-physics modeling}
-\begin{frame}{Champs Magnétiques Intenses}
+\begin{frame}{Electro-Aimants : un problème multi-physique}
   \vspace*{-0.5cm}
   \begin{columns}[c]
     \begin{column}{.7\linewidth}
@@ -180,8 +301,9 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Champs Magnétiques Intenses}
-  \begin{block}{Objectifs}
+\begin{frame}{Electro-Aimants : objectifs pour le calcul}
+  \begin{block}{Un modèle complet, précis, fiable et rapide}
+    \vspace*{-0.3cm}
     \begin{columns}[c]
       \column{.47\linewidth}
       \begin{small}
