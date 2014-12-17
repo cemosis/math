@@ -1,5 +1,4 @@
 % -*- coding: utf-8
-% /solutions/conference-talks/conference-ornate-20min.fr.tex, 22/02/2006 De Sousa
 
 \documentclass[slideopt,A4]{beamer}
 
@@ -8,7 +7,7 @@
 \useoutertheme{infolines}
 
 \usepackage[]{fontspec}
-\usepackage[T1]{fontenc}
+\usepackage{fontenc}
 \usepackage[type1]{libertine}
 \renewcommand{\ttdefault}{cmtt}
 
@@ -16,12 +15,12 @@
 \usepackage{mdframed}
 
 \usepackage{eurosym}
-
+\usepackage{url}
 \usepackage{anyfontsize}
 \setmainfont{linuxbiolinumo}
 \setsansfont{linuxbiolinumo}
 
-\definecolor{fontmaincolor}{HTML}{}
+\definecolor{fontmaincolor}{HTML}{000000}
 \definecolor{bgcolor}{HTML}{FFFFFF}
 \definecolor{bgshadecolor}{HTML}{DDDDDD}
 \graphicspath{%
@@ -135,6 +134,15 @@
 \newcommand{\dg}{^\circ}
 \newcommand{\saut}{\vspace*{3mm}\\}
 \newcommand{\RR}{\hbox{\bf I\hspace*{-1mm}R}}
+%% Macros
+\newcommand{\ddx}[1]{\ensuremath{\frac{\partial #1}{\partial x}}}
+\newcommand{\ddy}[1]{\ensuremath{\frac{\partial #1}{\partial y}}}
+\newcommand{\ddz}[1]{\ensuremath{\frac{\partial #1}{\partial z}}}
+\newcommand{\dddxdx}[1]{\ensuremath{\frac{\partial^2 #1}{\partial x \partial x}}}
+\newcommand{\dddxdy}[1]{\ensuremath{\frac{\partial^2 #1}{\partial x \partial y}}}
+\newcommand{\dddydy}[1]{\ensuremath{\frac{\partial^2 #1}{\partial y \partial y}}}
+\renewcommand{\div}{\operatorname{div}}
+\renewcommand{\rot}{\operatorname{rot}}
 
 \begin{document}
 
@@ -233,6 +241,12 @@
 \includegraphics[width=0.24\linewidth]{einstein}
 \end{center}
 
+\begin{block}{Du coté de nos amis américains?}
+  \begin{itemize}
+  \item Un métier en pleine expansion: \\{\small\url{http://www.bls.gov/ooh/math/mathematicians.htm}}
+  \item Best job en 2014:\\ {\small \url{http://www.careercast.com/jobs-rated/best-jobs-2014}}
+  \end{itemize}
+\end{block}
 %
 \end{frame}
 
@@ -465,8 +479,8 @@ Fusion nucléaire contrôlée : plasma confiné dans la chambre magnétique (ITE
 \input{exemple.sante}
 \input{exemple.cmi}
 
-\section{Formations et Débouchés ou Comment parvenir à travailler sur
-  ces sujets}
+\section{Formations et Débouchés}
+% ou Comment parvenir à travailler sur  ces sujets}
 
 \input{formations}
 
