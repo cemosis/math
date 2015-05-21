@@ -1,0 +1,213 @@
+% -*- coding: utf-8
+
+\documentclass[slideopt,A4]{beamer}
+
+\usetheme{default}
+
+\useoutertheme{infolines}
+
+\usepackage[]{fontspec}
+\usepackage{fontenc}
+\usepackage[type1]{libertine}
+\renewcommand{\ttdefault}{cmtt}
+
+\usepackage{lastpage}
+\usepackage{mdframed}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+
+\usepackage{eurosym}
+\usepackage{url}
+\usepackage{anyfontsize}
+\setmainfont{linuxbiolinumo}
+\setsansfont{linuxbiolinumo}
+
+\definecolor{fontmaincolor}{HTML}{000000}
+\definecolor{bgcolor}{HTML}{FFFFFF}
+\definecolor{bgshadecolor}{HTML}{DDDDDD}
+\graphicspath{%
+  {./Figures/}%
+}
+%\usepackage [T1] {inputenc}
+%\usepackage [utf8] {inputenc}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,patterns,plotmarks,shapes,snakes,er,3d,automata,backgrounds,topaths,trees,petri,mindmap}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\usepackage{eso-pic}
+\usepackage{../monster2e}
+\usepackage{tikz}
+\usepackage{layout}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb,wasysym}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage[absolute,showboxes,overlay]{textpos}
+\TPshowboxesfalse
+\textblockorigin{0mm}{0mm}
+
+\usepackage{media9}
+%\usepackage{movie15_dvipdfmx}
+%\usepackage[dvipdfmx]{movie15_dvipdfmx}
+
+\definecolor{rouge1}{RGB}{226,0,38}  % red P
+\definecolor{orange1}{RGB}{243,154,38}  % orange P
+\definecolor{jaune}{RGB}{254,205,27}  % jaune P
+\definecolor{blanc}{RGB}{255,255,255} % blanc P
+
+\definecolor{rouge2}{RGB}{230,68,57}  % red S
+\definecolor{orange2}{RGB}{236,117,40}  % orange S
+\definecolor{taupe}{RGB}{134,113,127} % taupe S
+\definecolor{gris}{RGB}{91,94,111} % gris S
+\definecolor{bleu1}{RGB}{38,109,131} % bleu S
+\definecolor{bleu2}{RGB}{28,70,114} % bleu S
+\definecolor{vert1}{RGB}{133,146,66} % vert S
+\definecolor{vert2}{RGB}{157,193,7} % vert S
+
+\definecolor{rouge3}{RGB}{255,200,130}  
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block title}{fg=white, bg=rouge1}
+\setbeamercolor{block body}{fg=black, bg=rouge3}
+
+\usepackage{tikz}
+% tikz library (frise lncmi exemple)
+\usetikzlibrary{calc,fit,shadows,arrows,positioning}
+\usepackage{xcolor}
+\xdefinecolor{fColor}{RGB}{0 81 145} % Light blue
+\newcommand{\fColor}{fColor}
+
+\newcommand{\topLegend}[2]{
+  node [text centered,%
+  shade,%
+  top color=\fColor,%
+  text justified,
+  draw,%
+  semithick,
+  rounded corners=2pt,
+  above,
+  #1] {#2}}
+
+\newcommand{\bottomLegend}[2]{
+  node [text centered,%
+  shade,%
+  top color=\fColor,%
+  text justified,
+  draw,%
+  semithick,
+  rounded corners=2pt,
+  below,
+  #1] {#2}}
+
+\newcommand{\topEvent}[3]{\draw[<-,very thick] (#1) coordinate (#2) (#2 |- xH axis) -- ++ (#3)}
+\newcommand{\bottomEvent}[3]{\draw[<-,very thick] (#1) coordinate (#2) -- ++ (#3)}
+\newcommand{\bottomGraphics}[2]{node[below,draw,inner sep=1pt,thin,rounded corners=1pt] {\includegraphics[#1]{#2}}}
+\newcommand{\topGraphics}[2]{node[above,draw,inner sep=1pt,thin,rounded corners=1pt] {\includegraphics[#1]{#2}}}
+
+% define trademark symbol
+\def\registered{{\ooalign{\hfil\raise .00ex\hbox{\scriptsize R}\hfil\crcr\mathhexbox20D}}}
+
+\renewcommand{\sfdefault}{lmss}
+\sffamily
+
+\setbeamersize{text margin left=1cm,text margin right=1cm}
+
+
+\AtBeginSection[] {
+  \begin{frame}<beamer>{Plan}
+   \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%    \tableofcontents[currentsection]
+  \end{frame}
+ }
+
+\AtBeginSubsection[] {
+  \begin{frame}<beamer>{Plan}
+   \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%    \tableofcontents[currentsection,currentssubection]
+  \end{frame}
+ }
+
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\dg}{^\circ}
+\newcommand{\saut}{\vspace*{3mm}\\}
+\newcommand{\RR}{\hbox{\bf I\hspace*{-1mm}R}}
+%% Macros
+\newcommand{\ddx}[1]{\ensuremath{\frac{\partial #1}{\partial x}}}
+\newcommand{\ddy}[1]{\ensuremath{\frac{\partial #1}{\partial y}}}
+\newcommand{\ddz}[1]{\ensuremath{\frac{\partial #1}{\partial z}}}
+\newcommand{\dddxdx}[1]{\ensuremath{\frac{\partial^2 #1}{\partial x \partial x}}}
+\newcommand{\dddxdy}[1]{\ensuremath{\frac{\partial^2 #1}{\partial x \partial y}}}
+\newcommand{\dddydy}[1]{\ensuremath{\frac{\partial^2 #1}{\partial y \partial y}}}
+\renewcommand{\div}{\operatorname{div}}
+\renewcommand{\rot}{\operatorname{rot}}
+
+\begin{document}
+
+
+\setbeamertemplate{background canvas}[vertical shading][top=white,middle=white,bottom=white]
+
+\setbeamertemplate{footline}{ \hspace{5em} \textcolor{white} {Les Mathématiques}\hspace{2em}\null \vspace*{3pt}}
+
+
+\begin{frame}
+
+\begin{textblock*}{15cm}(13mm,30mm)
+{\textcolor{red} {
+{\huge\bf Master 2 Recherche: }\\[2mm]
+{\bf Équations aux dérivées partielle}\\[8mm] }}
+{\textcolor{black} {
+%   	{\Large Philippe Helluy \& Christophe Prud'homme}\\[2mm]
+	{\Large Université de Strasbourg}\\[2mm]
+        \includegraphics[height=1.2cm]{LOGOS/logoCemosis}	\hspace*{40mm}	
+        \includegraphics[height=1.2cm]{LOGOS/logoUDS}\\
+      }}
+\end{textblock*}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{background canvas}[vertical shading][top=blanc, middle=blanc,bottom=blanc]
+
+\setbeamercolor{toto}{fg=white,bg=blue}
+
+\setbeamertemplate{footline}
+{
+\begin{beamercolorbox}[wd=1\paperwidth,ht=15.5pt]{toto}
+\hspace{-1.6mm}	
+  \raisebox{1.2ex}
+  {  \includegraphics[height=.6cm]{LOGOS/logoCemosis}}
+  \raisebox{2.5ex}
+  %{ P. Helluy \& C. Prud'homme (UNISTRA/CEMOSIS)  }
+  {Cemosis, IRMA, UFR Math-Info}
+\hspace{\fill}	
+ % \raisebox{1.2ex}
+%\hspace{\fill}	
+%  \raisebox{2.5ex}
+%  { \insertframenumber \hspace{1mm}  }
+  \raisebox{2.5ex}
+ {  }
+  \raisebox{1ex}
+{  \colorbox{white}{\includegraphics[height=.6cm]{LOGOS/logoUDS}}}
+\end{beamercolorbox} 
+}
+
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{{\Large Plan}}
+  \tableofcontents
+  % Vous pouvez, si vous le souhaiter ajouter l'option [pausesections]
+\end{frame}
+
+
+
+\end{document}
+
