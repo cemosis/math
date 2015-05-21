@@ -41,9 +41,10 @@
 \usepackage{tikz}
 \usepackage{layout}
 \usepackage{xcolor}
-\usepackage{amsmath,amssymb,wasysym}
+\usepackage{amsmath,amssymb,wasysym,bm}
 \usepackage{fancybox}
 \usepackage{graphicx}
+\usepackage{subfigure}
 \usepackage{multimedia}
 \usepackage[absolute,showboxes,overlay]{textpos}
 \TPshowboxesfalse
@@ -343,6 +344,24 @@ On soumet le corps à un signal (magnétique, électrique, acoustique, ...), et 
 \end{frame}
 %
 
+%
+
+\begin{frame}
+  \frametitle{Santé}
+  
+  \begin{block}{}
+    Comprendre les mécanismes physiologiques et
+    pathologiques(anévrismes, anémie, atherosclérose, maladies
+    neurodégénératives: Alzheimer...),
+    proposer des outils de diagnostics peu chers et fiables
+  \end{block}
+
+\includegraphics[width=0.3\linewidth]{Figures/MesoChallengePressure2.png}$\;$
+\includegraphics[width=0.3\linewidth]{Figures/sickleCellDisease.jpg}$\;$
+\includegraphics[width=0.3\linewidth]{Figures/atherosclerosisDisease.jpg}\\
+\centerline{\includegraphics[width=0.6\linewidth]{Figures/Eye2Brain_connections.pdf}}
+  
+\end{frame}
 
 %
 \begin{frame}
@@ -452,6 +471,19 @@ Fusion nucléaire contrôlée : plasma confiné dans la chambre magnétique (ITE
 \end{frame}
 %
 
+\begin{frame}
+  \frametitle{Calculer...}
+  TGCC Curie: 10080 eight-core processors, Intel® Xeon® Next
+  Generation, un total de 80640 cores.
+  \centerline{\includegraphics[width=0.5\linewidth]{Figures/tgcc_curie.jpeg}}
+  \centerline{Puissance énergie : 7.5 Mw ($\approx$ ville de 40 000 habitants)}\\
+  \centerline{Puissance calcul: 200 Tflops, $200.10^{12}$ floating point
+    operations per second}\\
+  \begin{center}
+    Ce type d’ordinateur est plus difficile à programmer qu’un PC (surtout si l’on veut que le calcul soit efficace !!).
+  \end{center}
+    \centerline{\alert{−→ informatique, algorithmique, optimisation...}}
+\end{frame}
 
 %
 \begin{frame}
